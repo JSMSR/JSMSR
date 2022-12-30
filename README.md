@@ -73,8 +73,9 @@ warn! ! !
 We currently do not accept downstream!
 
 If you need APNIC LIR service, please move to AS139317
+If you need RIPE LIR service, please move to [AS202888](https://t.me/@zh_210320)
 
-If you need to access Moe IX, please go to AS138211
+If you need to access [Moe IX](https://moeqing-network.gitbook.io/moeix/moeix-cgo/vm-wang-luo-shuo-ming), please go to AS138211
 
 If you have any questions and help please send a letter to [admin@jsmsr.com](mailto:admin@jsmsr.com)
 
