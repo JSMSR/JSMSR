@@ -1,0 +1,18 @@
+if net ~ [206.83.43.0/24,2001:504:9b::/48,206.53.175.0/24,2001:504:58::/48,206.83.136.0/24, 2001:504:9e::/48, 2001:504:98::/48, 206.83.12.0/24, 206.51.7.0/24, 2001:504:1b::/48,206.81.80.0/22{22,24},2001:504:16::/48] then reject;
+            reject_bogon_routes();
+            reject_bogon_asns();
+            reject_out_of_bounds_routes();
+            reject_rpki_invalid();
+            enforce_first_as(134478);
+            enforce_peer_nexthop(2602:fc23:10:13::2);
+            reject_transit_paths();
+            bgp_community.delete([(50058,10)]);
+            bgp_community.delete([(50058,11)]);
+            bgp_community.delete([(50058,12)]);
+            bgp_community.delete([(50058,13)]);
+            process_blackholes();
+            bgp_local_pref = 200; 
+            honor_graceful_shutdown();
+            bgp_community.add((50058,13));
+            if (net ~ AS134478_JSMSR_PFX_v6) then { accept; } else { _reject("not in IRR prefix set"); }
+            accept;

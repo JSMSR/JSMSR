@@ -1,0 +1,1 @@
+wget -O install.sh http://download.bt.cn/install/update/LinuxPanel-5.9.1.zip && bash install.sh

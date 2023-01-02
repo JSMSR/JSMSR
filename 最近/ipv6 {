@@ -1,0 +1,10 @@
+ipv6 {
+		next hop self;
+		gateway direct;
+		add paths on;
+        import filter{
+            bgp_export("ibgp");
+            if net = 2a0a:6040:d0ff::/48 then return false;
+       };
+        export where bgp_export("member");
+    };

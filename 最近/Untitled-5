@@ -1,0 +1,30 @@
+docker run -d \
+    --name adguardhome \
+    -v $PWD/adguardhome/work:/opt/adguardhome/work \
+    -v $PWD/adguardhome/conf:/opt/adguardhome/conf \
+    -p 53:53/tcp \
+    -p 53:53/udp \
+    -p 67:67/udp \
+    -p 68:68/tcp \
+    -p 68:68/udp \
+    -p 8085:80/tcp \
+    -p 8086:443/tcp \
+    -p 853:853/tcp \
+    -p 3035:3000/tcp \
+    adguard/adguardhome
+
+
+
+
+
+docker run -d \
+    --name adguardhome \
+    -v $PWD/adguardhome/work:/opt/adguardhome/work \
+    -v $PWD/adguardhome/conf:/opt/adguardhome/conf \
+    -p 53:53/tcp \
+    -p 53:53/udp \
+    -p 67:67/udp \
+    -p 68:68/tcp \
+    -p 68:68/udp \
+    -p 3031:3000/tcp \
+    adguard/adguardhome

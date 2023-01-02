@@ -1,0 +1,22 @@
+docker run -d \
+    --name=karaoke-eternal \
+    -v <path_to_database>:/config \
+    -v <path_to_media>:/mnt/karaoke \
+    -p 3333:8080 \
+    --restart unless-stopped \
+    radrootllc/karaoke-eternal
+
+
+
+
+docker run -d \
+    --name adguardhome \
+    -v $PWD/adguardhome/work:/opt/adguardhome/work \
+    -v $PWD/adguardhome/conf:/opt/adguardhome/conf \
+    -p 53:53/tcp \
+    -p 53:53/udp \
+    -p 67:67/udp \
+    -p 68:68/tcp \
+    -p 68:68/udp \
+    -p 3031:3000/tcp \
+    adguard/adguardhome
